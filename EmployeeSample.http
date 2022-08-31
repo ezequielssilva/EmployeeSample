@@ -1,0 +1,49 @@
+@BaseUrl = https://localhost:7245/v1
+
+POST {{BaseUrl}}/employees HTTP/1.1
+content-type: application/json
+
+{
+  "document": "03123967085",
+  "fullName": "Ataíde Melo Goulart",
+  "socialName": "",
+  "sex": "F",
+  "maritalStatus": 1,
+  "educationLevel": 1,
+  "birthDate": "1989-06-29",
+  "phone": "37986345685",
+  "email": "ataide.goulart@geradornv.com.br"
+}
+
+###
+PUT {{BaseUrl}}/employees HTTP/1.1
+content-type: application/json
+
+{
+  "id": "573a5820-4618-408d-accb-1e07570216bd",
+  "document": "32948934184",
+  "fullName": "Ataíde Melo Goulart",
+  "socialName": null,
+  "sex": "F",
+  "maritalStatus": 3,
+  "educationLevel": 9,
+  "birthDate": "1989-06-29",
+  "phone": "37986345685",
+  "email": "ataide.goulart@geradornv.com.br"
+}
+
+###
+DELETE {{BaseUrl}}/employees/573a5820-4618-408d-accb-1e07570216bd HTTP/1.1
+content-type: application/json
+
+###
+GET {{BaseUrl}}/employees/32948934184/document HTTP/1.1
+content-type: application/json
+
+###
+GET {{BaseUrl}}/employees/7bcaf563-6905-429b-baeb-5eb01ded09aa HTTP/1.1
+content-type: application/json
+
+###
+GET {{BaseUrl}}/employees?page=1 HTTP/1.1
+content-type: application/json

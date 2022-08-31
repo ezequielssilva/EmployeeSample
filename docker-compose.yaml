@@ -1,0 +1,16 @@
+services:
+
+  db_sqlserver:
+    container_name: employeesample_db_sqlserver
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    user: root
+    volumes:
+      - "./docker/mssql/data:/var/opt/mssql/data"
+      - "./docker/mssql/log:/var/opt/mssql/log"
+      - "./docker/mssql/secrets:/var/opt/mssql/secrets"
+    ports:
+      - "1434:1433"
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_PID: "Developer"
+      MSSQL_SA_PASSWORD: "Test@231"
